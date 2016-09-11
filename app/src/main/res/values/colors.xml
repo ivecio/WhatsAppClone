@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#244c73</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary2">#667cf3</color>
+    <color name="colorPrimaryDark2">#334adb</color>
+    <color name="colorAccent2">#4089ff</color>
+    <color name="colordentrocaixa">#9facf3</color>
+    <color name="colorTextBox">#3f3d3d</color>
+    <color name="colorTextoTela">#102437</color>
+</resources>
