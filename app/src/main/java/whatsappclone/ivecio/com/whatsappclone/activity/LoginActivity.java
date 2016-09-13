@@ -1,6 +1,7 @@
 package whatsappclone.ivecio.com.whatsappclone.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,8 @@ import java.util.HashMap;
 import java.util.Random;
 
 import android.Manifest;
+import android.widget.Toast;
+
 import whatsappclone.ivecio.com.whatsappclone.R;
 import whatsappclone.ivecio.com.whatsappclone.helper.Permissao;
 import whatsappclone.ivecio.com.whatsappclone.helper.Preferencias;
@@ -58,11 +61,11 @@ public class LoginActivity extends AppCompatActivity {
         MaskTextWatcher maskTelefone = new MaskTextWatcher(telefone, simpleMaskTelefone); //define a máscara como estilo
         telefone.addTextChangedListener( maskTelefone ); //define onde vai ser usada a máscara
 
-        SimpleMaskFormatter simpleMaskDDD = new SimpleMaskFormatter(" (NN) ");
+        SimpleMaskFormatter simpleMaskDDD = new SimpleMaskFormatter("NN");
         MaskTextWatcher maskDDD = new MaskTextWatcher(ddd, simpleMaskDDD);
         ddd.addTextChangedListener( maskDDD );
 
-        SimpleMaskFormatter simpleMaskDDI = new SimpleMaskFormatter(" +NN ");
+        SimpleMaskFormatter simpleMaskDDI = new SimpleMaskFormatter("+NN");
         MaskTextWatcher maskDDI = new MaskTextWatcher(ddi, simpleMaskDDI);
         ddi.addTextChangedListener( maskDDI );
 
@@ -76,8 +79,13 @@ public class LoginActivity extends AppCompatActivity {
                         ddd.getText().toString() +
                         telefone.getText().toString();
 
+
                 //aqui o telefone é armazenado perdendo todos caraterezes especiais
                 String telefoneSemFormatacao = telefoneCompleto.replace("+", "");
+
+                //teste com emulador
+                //telefoneSemFormatacao = "5554";
+
                 telefoneSemFormatacao = telefoneSemFormatacao.replace("-", "");
                 telefoneSemFormatacao = telefoneSemFormatacao.replace("(", "");
                 telefoneSemFormatacao = telefoneSemFormatacao.replace(")", "");
@@ -95,6 +103,15 @@ public class LoginActivity extends AppCompatActivity {
                 //Envio de SMS - aqui volta a colocar o "+" na frente porque precisa para envio do SMS
                 boolean enviadoSMS = enviaSMS( "+" + telefoneSemFormatacao, mensagemEnvio );
 
+                if ( enviadoSMS ) {
+
+                    Intent intent = new Intent( LoginActivity.this, ValidadorAcitivity.class );
+                    startActivity( intent );
+                    finish();
+
+                }else {
+                    Toast.makeText(LoginActivity.this, "Problema ao enviar o SMS", Toast.LENGTH_LONG).show();
+                }
 
                 /*HashMap<String, String> usuario = preferencias.getDadosUsuario();*/
 
