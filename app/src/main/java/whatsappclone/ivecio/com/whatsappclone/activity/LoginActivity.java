@@ -1,5 +1,6 @@
 package whatsappclone.ivecio.com.whatsappclone.activity;
 
+import android.app.Application;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
+import com.google.firebase.FirebaseOptions;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -29,6 +31,7 @@ import whatsappclone.ivecio.com.whatsappclone.helper.Preferencias;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +39,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
+
     }
 
-    public void abrirCadastroUsuario (View view) {
+    public void abrirCadastroUsuario(View view) {
 
         Intent intent = new Intent(LoginActivity.this, CadastroUsuarioActivity.class);
-        startActivity( intent );
-        
+        startActivity(intent)
+
     }
-
 }
-
 
