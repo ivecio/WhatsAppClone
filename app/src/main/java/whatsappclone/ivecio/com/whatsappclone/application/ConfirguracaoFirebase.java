@@ -10,7 +10,7 @@ public class ConfirguracaoFirebase {
 
     private static DatabaseReference firebase;
 
-    public static Firebase getFirebase(){
+    public static DatabaseReference getFirebase(){
 
         if(firebase==null){
             firebase = FirebaseDatabase.getInstance().getReference();

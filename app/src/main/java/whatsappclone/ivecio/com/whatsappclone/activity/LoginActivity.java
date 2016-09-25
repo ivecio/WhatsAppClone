@@ -1,51 +1,52 @@
 package whatsappclone.ivecio.com.whatsappclone.activity;
 
-import android.app.Application;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.telephony.SmsManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.github.rtoshiro.util.format.SimpleMaskFormatter;
-import com.github.rtoshiro.util.format.text.MaskTextWatcher;
-import com.google.firebase.FirebaseOptions;
-
-import java.util.HashMap;
-import java.util.Random;
-
-import android.Manifest;
-import android.widget.Toast;
+import com.google.firebase.database.DatabaseReference;
 
 import whatsappclone.ivecio.com.whatsappclone.R;
-import whatsappclone.ivecio.com.whatsappclone.helper.Permissao;
-import whatsappclone.ivecio.com.whatsappclone.helper.Preferencias;
-
+import whatsappclone.ivecio.com.whatsappclone.application.ConfirguracaoFirebase;
 
 
 public class LoginActivity extends AppCompatActivity {
 
-    private
+    private DatabaseReference databaseReference;
+    private EditText email;
+    private EditText senha;
+    private Button botaoLogar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        databaseReference = ConfirguracaoFirebase.getFirebase();
 
+        email       = (EditText) findViewById(R.id.edit_login_email);
+        senha       = (EditText) findViewById(R.id.edit_login_senha);
+        botaoLogar  = (Button) findViewById(R.id.bt_login);
+
+        botaoLogar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+            }
+        });
 
     }
 
     public void abrirCadastroUsuario(View view) {
 
         Intent intent = new Intent(LoginActivity.this, CadastroUsuarioActivity.class);
-        startActivity(intent)
+        startActivity(intent);
 
     }
 }

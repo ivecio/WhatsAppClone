@@ -22,17 +22,6 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/edit_login_email"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="60dp"
-        android:hint="Digite seu e-mail" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/edit_login_senha"
@@ -60,5 +49,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp"
         android:onClick="abrirCadastroUsuario" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/edit_login_email"
+        android:hint="Digite seu e-mail"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="68dp" />
 
 </RelativeLayout>
