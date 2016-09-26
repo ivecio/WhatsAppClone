@@ -65,13 +65,13 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {//sucesso ao cadastrar
 
-                            usuario.setId(firebaseAuth.getCurrentUser().getUid());
+                            usuario.setId( task.getResult().getUser().getUid() );
                             usuario.salvar();
+
+                            finish(); //com o finish, ele encerra a tela e volta para a anterior
 
                             Toast.makeText(CadastroUsuarioActivity.this, "Usuário Cadastrado", Toast.LENGTH_LONG).show();
                             Log.i("CreateUser", "Deu certo");
-
-                            finish();
 
                         } else {
                             Toast.makeText(CadastroUsuarioActivity.this, "Usuário não cadastrado", Toast.LENGTH_LONG).show();

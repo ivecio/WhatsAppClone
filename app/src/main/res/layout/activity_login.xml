@@ -57,8 +57,8 @@
         android:ems="10"
         android:id="@+id/edit_login_email"
         android:hint="Digite seu e-mail"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="68dp" />
+        android:layout_marginBottom="23dp"
+        android:layout_above="@+id/edit_login_senha"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
