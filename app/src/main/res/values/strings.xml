@@ -6,4 +6,8 @@
     <string name="botao_validador">Validar</string>
     <string name="botao_logar">Fazer Login</string>
     <string name="texto_cadastre">Não tem conta? Cadastre-se.</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_sair">Sair</string>
+    <string name="action_pesquisa">Pesquisar</string>
+    <string name="action_add">Adicionar</string>
 </resources>
