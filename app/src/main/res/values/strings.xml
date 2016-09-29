@@ -9,5 +9,8 @@
     <string name="action_settings">Configurações</string>
     <string name="action_sair">Sair</string>
     <string name="action_pesquisa">Pesquisar</string>
-    <string name="action_add">Adicionar</string>
+    <string name="action_add">Adicionar Contato</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

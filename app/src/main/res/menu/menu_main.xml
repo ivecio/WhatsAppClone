@@ -5,16 +5,19 @@
     tools:context=".MainActivity">
 
 
-    <item android:id="@+id/item_pesquisa" android1:title="@string/action_pesquisa"
-        android:orderInCategory="300" android:showAsAction="ifRoom"
-        android1:icon="@drawable/ic_search"/>
-    <item android:id="@+id/item_add" android1:title="@string/action_add"
-        android:orderInCategory="100" android:showAsAction="ifRoom"
-        android1:icon="@drawable/ic_person_add"/>
-    <item android:id="@+id/action_settings" android1:title="@string/action_settings"
-        android:orderInCategory="100" android:showAsAction="never"/>
-
-    <item android:id="@+id/action_sair" android1:title="@string/action_sair"
-        android:orderInCategory="200" android:showAsAction="never" />
+    <item android1:title="@string/action_pesquisa"
+        android:showAsAction="ifRoom"
+        android1:icon="@drawable/ic_search"
+        android1:id="@+id/action_pesquisar" />
+    <item android1:title="@string/action_add"
+        android:showAsAction="ifRoom"
+        android1:icon="@drawable/ic_person_add"
+        android1:id="@+id/action_add" />
+    <item android1:title="@string/action_settings"
+        android:showAsAction="never"
+        android1:id="@+id/action_settings" />
+    <item android1:title="@string/action_sair"
+        android:showAsAction="never"
+        android1:id="@+id/action_sair" />
 
 </menu>
