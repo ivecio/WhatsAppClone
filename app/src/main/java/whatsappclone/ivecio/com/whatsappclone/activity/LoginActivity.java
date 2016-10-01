@@ -14,17 +14,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 
 import whatsappclone.ivecio.com.whatsappclone.R;
-import whatsappclone.ivecio.com.whatsappclone.application.ConfirguracaoFirebase;
+import whatsappclone.ivecio.com.whatsappclone.helper.Base64Custom;
+import whatsappclone.ivecio.com.whatsappclone.helper.Preferencias;
 import whatsappclone.ivecio.com.whatsappclone.model.Usuario;
 
 
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference databaseReference;
     private EditText email;
     private EditText senha;
     private Button botaoLogar;
@@ -37,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        databaseReference = ConfirguracaoFirebase.getFirebase();
+        firebaseAuth = FirebaseAuth.getInstance();
         verificaUsuarioLogado();
 
         email       = (EditText) findViewById(R.id.edit_login_email);
@@ -77,6 +76,12 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {//sucesso ao cadastrar usuário
                             Toast.makeText( LoginActivity.this, "Usuário logado", Toast.LENGTH_LONG).show();
                             Log.i("SignIn", "Deu certo");
+
+                            //salvar email nas preferências
+                            String identificadorUsuarioLogado = Base64Custom.converterBase64( usuario.getEmail() );
+                            Preferencias preferencias = new Preferencias( LoginActivity.this );
+                            preferencias.salvarDados( identificadorUsuarioLogado );
+
                             abrirTelaPrincipal();
 
                         } else {
@@ -89,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void abrirTelaPrincipal () {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
     }
 

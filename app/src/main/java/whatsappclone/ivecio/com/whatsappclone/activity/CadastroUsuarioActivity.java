@@ -1,8 +1,8 @@
 package whatsappclone.ivecio.com.whatsappclone.activity;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +15,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import whatsappclone.ivecio.com.whatsappclone.R;
+import whatsappclone.ivecio.com.whatsappclone.helper.Base64Custom;
 import whatsappclone.ivecio.com.whatsappclone.model.Usuario;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
@@ -65,7 +66,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {//sucesso ao cadastrar
 
-                            usuario.setId( task.getResult().getUser().getUid() );
+                            String identificador = Base64Custom.converterBase64( usuario.getEmail() );
+                            usuario.setId( identificador );
                             usuario.salvar();
 
                             finish(); //com o finish, ele encerra a tela e volta para a anterior
