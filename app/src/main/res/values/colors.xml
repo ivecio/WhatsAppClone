@@ -9,4 +9,6 @@
     <color name="colordentrocaixa">#9facf3</color>
     <color name="colorTextBox">#3f3d3d</color>
     <color name="colorTextoTela">#102437</color>
+    <color name="cinza">#CCCCCCCC</color>
+
 </resources>

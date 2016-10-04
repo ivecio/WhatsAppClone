@@ -4,9 +4,7 @@ import android.app.Application;
 
 import com.google.firebase.FirebaseOptions;
 
-/**
- * Created by Usuario on 16/09/2016.
- */
+
 public class CustomApplication extends Application {
 
     @Override

@@ -3,9 +3,6 @@ package whatsappclone.ivecio.com.whatsappclone.helper;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * Created by Usuario on 11/09/2016.
- */
 public class Preferencias {
 
     private Context contexto;
@@ -15,6 +12,7 @@ public class Preferencias {
     private SharedPreferences.Editor editor;
 
     private String CHAVE_IDENTIFICADOR = "identificandoUsuario";
+    private String CHAVE_NOME = "nome";
 
     public Preferencias ( Context contextoParamento ) {
 
@@ -24,14 +22,20 @@ public class Preferencias {
 
     }
 
-    public void salvarDados ( String identificador ) {
+    public void salvarDados ( String identificador , String nome ) {
 
         editor.putString(CHAVE_IDENTIFICADOR, identificador);
+        editor.putString(CHAVE_NOME, nome);
         editor.commit();
     }
 
     public String getIdentificador() {
 
         return preferences.getString( CHAVE_IDENTIFICADOR, null);
+    }
+
+    public String getNome() {
+
+        return preferences.getString( CHAVE_NOME, null);
     }
 }

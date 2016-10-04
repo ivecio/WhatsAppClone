@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import whatsappclone.ivecio.com.whatsappclone.Adapter.TabAdapter;
 import whatsappclone.ivecio.com.whatsappclone.R;
-import whatsappclone.ivecio.com.whatsappclone.application.ConfirguracaoFirebase;
+import whatsappclone.ivecio.com.whatsappclone.application.ConfiguracaoFirebase;
 import whatsappclone.ivecio.com.whatsappclone.helper.Base64Custom;
 import whatsappclone.ivecio.com.whatsappclone.helper.Preferencias;
 import whatsappclone.ivecio.com.whatsappclone.helper.SlidingTabLayout;
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                     final String identificadorContato = Base64Custom.converterBase64( emailContato );
 
                     //Recuperar instância do Firebase
-                    databaseReference = ConfirguracaoFirebase.getFirebase();
+                    databaseReference = ConfiguracaoFirebase.getFirebase();
                     databaseReference = databaseReference.child("usuarios").child(identificadorContato);
 
                     //Fazer consulta única ao Firebase
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                                 contato.setNome( usuarioContato.getNome() );
 
                                 //Salvar dados no Firebase
-                                databaseReference = ConfirguracaoFirebase.getFirebase()
+                                databaseReference = ConfiguracaoFirebase.getFirebase()
                                                                             .child( "contatos" )
                                                                             .child( identificadorUsuarioLogado )
                                                                             .child( identificadorContato );

@@ -3,11 +3,7 @@ package whatsappclone.ivecio.com.whatsappclone.model;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
-import whatsappclone.ivecio.com.whatsappclone.application.ConfirguracaoFirebase;
-
-/**
- * Created by Usuario on 25/09/2016.
- */
+import whatsappclone.ivecio.com.whatsappclone.application.ConfiguracaoFirebase;
 
 public class Usuario {
 
@@ -22,7 +18,7 @@ public class Usuario {
 
     public void salvar () {
 
-        DatabaseReference salvaDados = ConfirguracaoFirebase.getFirebase();
+        DatabaseReference salvaDados = ConfiguracaoFirebase.getFirebase();
         salvaDados = salvaDados.child("usuarios").child( getId() );  //cria o pacote usuário e coloca o Id dentro
         salvaDados.setValue( this );
 

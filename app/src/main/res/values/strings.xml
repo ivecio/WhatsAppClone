@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WhatsAppClone</string>
+    <string name="app_name">ZapZap</string>
     <string name="botao_cadastrar">Cadastrar</string>
     <string name="validacao">Validação</string>
     <string name="texto_SMS">Você recebeu um SMS para validação de seu número, digite o codigo de validação abaixo:</string>

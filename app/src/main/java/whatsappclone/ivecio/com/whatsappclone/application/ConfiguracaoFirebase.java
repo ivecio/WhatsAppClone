@@ -6,7 +6,7 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * Created by Usuario on 16/09/2016.
  */
-public class ConfirguracaoFirebase {
+public class ConfiguracaoFirebase {
 
     private static DatabaseReference firebase;
 
